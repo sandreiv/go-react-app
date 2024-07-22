@@ -1,0 +1,9 @@
+root = "." # El directorio raiz del proyecto
+tmp_dir = "tmp" # El directorio temporal donde air va a alojar sus archivos temporales
+
+[build] #la configuracion de construccion
+    bin = "main" #el nombre del archivo binario que sera generado despues de construir el proyecto
+    cmd = "go build -o {{.Output}} {{.Input}}" # El comando que construye el proyecto
+    exclude = ["tmp/*","client/*"] # Especifica los directorios que seran excluidos de monitorear los cambios
+    include = ["**/*.go"] # Especifica los archivos o directorios que seran incluidos en el monitoreo
+    ignore = ["tmp/*"] # Especifica los archivos o directorios que seran ignorados cuando se levante una construccion
